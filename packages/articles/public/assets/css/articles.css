@@ -5,7 +5,7 @@ ul.articles li:not(:last-child) {
 	border-bottom: 1px solid #ccc
 }
 
-#preview {
+.md-preview {
     padding: 9px 14px;
     margin-bottom: 14px;
     background-color: #f7f7f9;
