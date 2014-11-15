@@ -28,7 +28,7 @@ Articles.register(function(app, auth, database) {
     'link': 'create article'
   });
   
-  Articles.angularDependencies(['hc.marked', 'hljs']);
+  Articles.angularDependencies(['hc.marked']);
 
   //Articles.aggregateAsset('js','/packages/system/public/services/menus.js', {group:'footer', absolute:true, weight:-9999});
   //Articles.aggregateAsset('js', 'test.js', {group: 'footer', weight: -1});
