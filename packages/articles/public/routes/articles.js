@@ -6,6 +6,7 @@ angular.module('mean.articles').config(['$stateProvider', 'markedProvider',
     markedProvider.setOptions({
       gfm: true,
       tables: true,
+      breaks: true,
       highlight: function (code) {
         /* jshint ignore:start */
         return hljs.highlightAuto(code).value;
