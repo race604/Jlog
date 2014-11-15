@@ -1,8 +1,17 @@
 'use strict';
 
 //Setting up route
-angular.module('mean.articles').config(['$stateProvider',
-  function($stateProvider) {
+angular.module('mean.articles').config(['$stateProvider', 'markedProvider',
+  function($stateProvider, markedProvider) {
+    markedProvider.setOptions({
+      gfm: true,
+      tables: true,
+      highlight: function (code) {
+        /* jshint ignore:start */
+        return hljs.highlightAuto(code).value;
+        /* jshint ignore:end */
+      }
+    });
     // Check if the user is connected
     var checkLoggedin = function($q, $timeout, $http, $location) {
       // Initialize a new promise
