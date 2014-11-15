@@ -27,6 +27,10 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
     };
 
     $scope.remove = function(article) {
+      if (confirm('Are you sure to delete?') !== true) {
+        return;
+      }
+
       if (article) {
         article.$remove(function(response) {
           for (var i in $scope.articles) {

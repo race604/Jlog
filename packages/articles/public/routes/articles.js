@@ -37,9 +37,9 @@ angular.module('mean.articles').config(['$stateProvider', 'markedProvider',
       .state('all articles', {
         url: '/articles',
         templateUrl: 'articles/views/list.html',
-        resolve: {
-          loggedin: checkLoggedin
-        }
+        //resolve: {
+        //  loggedin: checkLoggedin
+        //}
       })
       .state('create article', {
         url: '/articles/create',
