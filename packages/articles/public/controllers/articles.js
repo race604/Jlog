@@ -78,3 +78,19 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
     };
   }
 ]);
+
+angular.module('mean.articles').directive('ngAllowTab', function () {
+  return function (scope, element, attrs) {
+    element.bind('keydown', function (event) {
+      if (event.which === 9) {
+        event.preventDefault();
+        var start = this.selectionStart;
+        var end = this.selectionEnd;
+        element.val(element.val().substring(0, start) + '    ' + element.val().substring(start));
+        this.selectionStart = start + 4;
+        this.selectionEnd = end + 4;
+        element.triggerHandler('change');
+      }
+    });
+  };
+});

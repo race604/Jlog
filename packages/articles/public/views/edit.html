@@ -13,7 +13,7 @@
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.content.$invalid }">
       <label mean-token="'edit-content'" for="content" class="control-label">Content</label>
       <div>
-        <textarea name="content" data-ng-model="article.content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" required></textarea>
+        <textarea name="content" data-ng-model="article.content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" ng-allow-tab required></textarea>
         <div ng-show="submitted && articleForm.content.$invalid" class="help-block">
           <p ng-show="articleForm.content.$error.required">Content is required</p>
         </div>
