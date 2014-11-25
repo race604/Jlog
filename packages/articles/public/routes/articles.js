@@ -59,9 +59,9 @@ angular.module('mean.articles').config(['$stateProvider', 'markedProvider',
       .state('article by id', {
         url: '/articles/:articleId',
         templateUrl: 'articles/views/view.html',
-        resolve: {
-          loggedin: checkLoggedin
-        }
+        //resolve: {
+        //  loggedin: checkLoggedin
+        //}
       });
   }
 ]);
