@@ -12,3 +12,7 @@ ul.articles > li:not(:last-child) {
     border: 1px solid #e1e1e8;
     border-radius: 4px;
 }
+
+.center {
+  text-align: center
+}

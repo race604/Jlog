@@ -3,6 +3,9 @@
 angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Global', 'Articles',
   function($scope, $stateParams, $location, Global, Articles) {
     $scope.global = Global;
+    $scope.itemsPerPage = 20;
+    $scope.maxPageSize = 5;
+    $scope.currentPage = 1;
 
     $scope.hasAuthorization = function(article) {
       if (!article || !article.user) return false;
@@ -66,6 +69,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
     $scope.find = function() {
       Articles.query(function(articles) {
         $scope.articles = articles;
+        
+        $scope.updatePaginate();
       });
     };
 
@@ -74,6 +79,22 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         articleId: $stateParams.articleId
       }, function(article) {
         $scope.article = article;
+      });
+    };
+    
+    $scope.updatePaginate = function() {
+      Articles.total(function(ret){
+        $scope.totalItems = ret.total;
+      });
+    };
+    
+    $scope.pageChanged = function() {
+      Articles.page({
+        page: $scope.currentPage,
+        num: $scope.itemsPerPage,
+      }, function(articles) {
+        console.log(articles);
+        $scope.articles = articles;        
       });
     };
   }

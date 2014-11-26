@@ -12,6 +12,12 @@ var hasAuthorization = function(req, res, next) {
 
 module.exports = function(Articles, app, auth) {
 
+  app.route('/articles/total')
+    .get(articles.total);
+  app.route('/articles/p/:page/:num')
+    .get(articles.all);
+  app.route('/articles/p')
+    .get(articles.all);
   app.route('/articles')
     .get(articles.all)
     .post(auth.requiresLogin, articles.create);

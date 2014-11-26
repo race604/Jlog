@@ -84,13 +84,39 @@ exports.show = function(req, res) {
  * List of Articles
  */
 exports.all = function(req, res) {
-  Article.find().sort('-created').populate('user', 'name username').exec(function(err, articles) {
+  var page = req.param('page') || 1;
+  var num = req.param('num') || 20;
+  Article.find().sort('-created').skip((page - 1) * num).limit(num).populate('user', 'name username').exec(function(err, articles) {
     if (err) {
       return res.json(500, {
         error: 'Cannot list the articles'
       });
     }
+    
+    for (var i = articles.length - 1; i >= 0; i-=1) {
+      var content = articles[i].content;
+      if (content.length > 200) {
+        var idx = content.indexOf('\n', 200);
+        if (idx === -1 || idx > 400) {
+          idx = 200;
+        }
+        articles[i].content = content.substring(0, idx);
+      }
+    }
+
     res.json(articles);
 
+  });
+};
+
+exports.total = function(req, res) {
+  Article.count().exec(function(err, num){
+    if (err) {
+      return res.json(500, {
+        error: 'Cannot count the articles'
+      });
+    }
+    
+    res.json({total: num});
   });
 };

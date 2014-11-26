@@ -17,5 +17,8 @@
       <div class="article-content" marked="article.content"></div>
     </li>
   </ul>
+  <div class="center">
+    <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" max-size="maxPageSize" boundary-links="true" ng-change="pageChanged()"></pagination>
+  </div>
   <h1 data-ng-hide="!articles || articles.length">No articles yet. <br> Why don't you <a href="/#!/articles/create">Create One</a>?</h1>
 </section>

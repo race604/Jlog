@@ -8,7 +8,16 @@ angular.module('mean.articles').factory('Articles', ['$resource',
     }, {
       update: {
         method: 'PUT'
-      }
+      },
+      total: {
+        method: 'GET',
+        params: {articleId: 'total'}
+      },
+      page:{
+        method: 'GET',
+        params: {articleId: 'p'},
+        isArray: true
+      },
     });
   }
 ]);
