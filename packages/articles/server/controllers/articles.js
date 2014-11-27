@@ -77,6 +77,9 @@ exports.destroy = function(req, res) {
  * Show an article
  */
 exports.show = function(req, res) {
+  var article = req.article;
+  article.visit += 1;
+  article.save();
   res.json(req.article);
 };
 

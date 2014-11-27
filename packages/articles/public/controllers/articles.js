@@ -93,7 +93,6 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         page: $scope.currentPage,
         num: $scope.itemsPerPage,
       }, function(articles) {
-        console.log(articles);
         $scope.articles = articles;        
       });
     };

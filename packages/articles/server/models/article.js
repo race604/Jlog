@@ -28,6 +28,10 @@ var ArticleSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  visit: {
+    type: Number,
+    default: 0
   }
 });
 

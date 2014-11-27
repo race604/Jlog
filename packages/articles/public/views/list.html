@@ -3,6 +3,10 @@
     <li data-ng-repeat="article in articles">
       <span>{{article.created | date:'medium'}}</span> /
       <span>{{article.user.name}}</span>
+      <span class="badge">
+        <i class="glyphicon glyphicon-eye-open"></i>
+          {{article.visit}}
+      </span>
       <h2>
         <a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a>
         <span data-ng-if="hasAuthorization(article)">

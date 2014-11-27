@@ -1,8 +1,13 @@
 h1 {
 	text-align: center
 }
+
 ul.articles > li:not(:last-child) {
-	border-bottom: 1px solid #ccc
+	border-bottom: 1px solid #ccc;
+}
+
+ul.articles > li:not(:first-child) {
+	padding-top: 10px
 }
 
 .md-preview {
