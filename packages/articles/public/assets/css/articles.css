@@ -1,13 +1,27 @@
+body {
+  font-size: 18px
+}
+
 h1 {
 	text-align: center
 }
 
-ul.articles > li:not(:last-child) {
-	border-bottom: 1px solid #ccc;
+.articles {
+  list-style-type: none;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 1px;
+  -webkit-margin-end: 1px;
+  -webkit-padding-start: 1px
 }
 
-ul.articles > li:not(:first-child) {
-	padding-top: 10px
+ul.articles > li {
+  clear: both;
+  padding-top: 10px
+}
+
+ul.articles > li:not(:last-child) {
+	border-bottom: 1px solid #ccc;
 }
 
 .md-preview {
