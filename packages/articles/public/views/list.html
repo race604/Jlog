@@ -22,7 +22,7 @@
     </li>
   </ul>
   <div class="center" data-ng-show="articles && articles.length">
-    <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" max-size="maxPageSize" boundary-links="true" ng-change="pageChanged()"></pagination>
+	  <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" max-size="maxPageSize" boundary-links="true" previous-text="<" first-text="<<" next-text=">" last-text=">>" ng-change="pageChanged()"></pagination>
   </div>
   <h1 data-ng-hide="!articles || articles.length">No articles yet. <br> Why don't you <a href="/#!/articles/create">Create One</a>?</h1>
 </section>
