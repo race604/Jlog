@@ -1,7 +1,7 @@
 <section class="col-md-8" data-ng-controller="ArticlesController" data-ng-init="find()">
   <ul class="articles unstyled">
     <li data-ng-repeat="article in articles">
-      <span>{{article.created | date:'medium'}}</span> /
+      <span>{{article.created | date:'dd MMM yy @ HH:mm'}}</span> /
       <span>{{article.user.name}}</span>
       <span class="badge">
         <i class="glyphicon glyphicon-eye-open"></i>
