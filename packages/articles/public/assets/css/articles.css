@@ -6,6 +6,10 @@ h1 {
 	text-align: center
 }
 
+textarea[name=content] {
+  font-size: 18px
+}
+
 .articles {
   list-style-type: none;
   -webkit-margin-before: 1em;
@@ -13,6 +17,12 @@ h1 {
   -webkit-margin-start: 1px;
   -webkit-margin-end: 1px;
   -webkit-padding-start: 1px
+}
+
+.article-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 ul.articles > li {
