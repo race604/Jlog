@@ -15,6 +15,8 @@ var SystemPackage = new Module('system');
  */
 SystemPackage.register(function(app, auth, database) {
 
+  app.use(require('prerender-node').set('prerenderToken', 'dBBMOJ5I3ponNSODTCSq'));
+
   //We enable routing. By default the Package Object is passed to the routes
   SystemPackage.routes(app, auth, database);
 
@@ -27,8 +29,7 @@ SystemPackage.register(function(app, auth, database) {
 
   // Setting the favicon and static folder
   app.use(favicon(__dirname + '/public/assets/img/favicon.ico'));
-
-  app.use(require('prerender-node').set('prerenderToken', 'dBBMOJ5I3ponNSODTCSq'));
+  
   // Adding robots and humans txt
   app.use(express.static(__dirname + '/public/assets/static'));
 
