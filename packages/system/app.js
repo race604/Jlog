@@ -15,8 +15,6 @@ var SystemPackage = new Module('system');
  */
 SystemPackage.register(function(app, auth, database) {
 
-  app.use(require('prerender-node').set('prerenderToken', 'dBBMOJ5I3ponNSODTCSq'));
-
   //We enable routing. By default the Package Object is passed to the routes
   SystemPackage.routes(app, auth, database);
 
