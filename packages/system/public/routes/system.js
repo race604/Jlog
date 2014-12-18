@@ -4,7 +4,7 @@
 angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider) {
     // For unmatched routes:
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/articles');
 
     // states for my app
     $stateProvider
